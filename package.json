@@ -1,0 +1,20 @@
+{
+    "id": "hxr-card",
+    "name": "翻牌抽奖",
+    "displayName": "翻牌抽奖",
+    "version": "1.1.1",
+    "description": "翻牌抽奖组件， 支持h5、app、小程序",
+    "keywords": [
+        "翻牌",
+        "抽奖",
+        "翻卡片",
+        "运营",
+        "翻盘抽奖"
+    ],
+    "dcloudext": {
+        "category": [
+            "前端组件",
+            "通用组件"
+        ]
+    }
+}

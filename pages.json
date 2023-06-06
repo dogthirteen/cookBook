@@ -1,0 +1,34 @@
+{
+	"pages": [
+		//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index"
+		}
+	],
+	"subPackages": [{
+		"root": "pagesBook",
+		"pages": [{
+			"path": "random/random"
+		}, {
+			"path": "draw/draw"
+		}]
+	}],
+	"preloadRule": {
+		"pages/index/index": {
+			"network": "all",
+			"packages": ["pagesBook"]
+		}
+	},
+	"globalStyle": {
+		"mp-alipay": {
+			/* 支付宝小程序特有相关 */
+			"transparentTitle": "always",
+			"allowsBounceVertical": "NO"
+		},
+		"navigationBarTextStyle": "black",
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTitleText": "筷乐干饭",
+		"navigationStyle": "custom"
+	},
+	"usingComponts": true
+}
