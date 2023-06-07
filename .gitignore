@@ -5,6 +5,7 @@ unpackage
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+config.js*
 **/*.log
 
 # Editor directories and files

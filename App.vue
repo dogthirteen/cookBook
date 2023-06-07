@@ -1,7 +1,29 @@
 <script>
 	import Vue from 'vue'
+	import autoUpdate from './utils/autoUpload'
+	import { GetOssUploadList } from 'api/oss.js'
 	export default {
+		globalData: {
+			photos: [
+				'https://s2.loli.net/2023/06/07/UbciBpItZW8Qdle.jpg',
+				'https://s2.loli.net/2023/06/07/46Ee1URXMiuzJjk.jpg',
+				'https://s2.loli.net/2023/06/07/hskZrIvJqeLp6ai.jpg',
+				'https://s2.loli.net/2023/06/07/yYQj7GqXDCrV4AS.jpg',
+				'https://s2.loli.net/2023/06/07/PHg95rnWxFMzV6O.jpg',
+				'https://s2.loli.net/2023/06/07/DSibxm1TrN6BULd.jpg',
+				'https://s2.loli.net/2023/06/07/RpgoDaO5vVJCWiN.jpg',
+				'https://s2.loli.net/2023/06/07/OFSz9IlerYmjnxX.jpg',
+				'https://s2.loli.net/2023/06/07/apm3e7rkAJDRKBw.jpg',
+				'https://s2.loli.net/2023/06/07/cz7gGEteahBu1FW.jpg',
+				'https://s2.loli.net/2023/06/07/4dk3Y6ypr1FBoSv.jpg',
+				'https://s2.loli.net/2023/06/07/ShrUy7dZx3kCATK.jpg',
+				'https://s2.loli.net/2023/06/07/7McTZG529FtOBid.jpg'
+			],
+		},
 		onLaunch: function() {
+			// #ifndef MP-WEIXIN
+			this.handleGetOssUploadList()
+			// #endif
 			uni.getSystemInfo({
 				success: function(e) {
 					// #ifndef MP
@@ -23,7 +45,7 @@
 					} else {
 						Vue.prototype.CustomBar = e.statusBarHeight + 50;
 					}
-					// #endif		
+					// #endif
 
 
 					// #ifdef MP-ALIPAY
@@ -35,9 +57,21 @@
 		},
 		onShow: function() {
 			console.log('App Show')
+			autoUpdate()
 		},
 		onHide: function() {
 			console.log('App Hide')
+		},
+		methods: {
+			async handleGetOssUploadList() {
+				try {
+					const { data } = await GetOssUploadList({ page: 1 })
+					console.log('data', data);
+					this.globalData.photos = data.filter(item => item.filename.indexOf('photo_') > -1).map(item => item.url)
+				} catch (err) {
+					console.log('err', err);
+				}
+			},
 		}
 
 	}
@@ -48,13 +82,14 @@
 	@import "colorui/animation.css";
 	@import "colorui/icon.css";
 
-	.wrap{
+	.wrap {
 		width: 100vw;
 		min-height: 100vh;
 		font-size: 28rpx;
 		color: #111;
 		background-color: #f3f4f5;
 	}
+
 	@keyframes show {
 		0% {
 			transform: translateY(-50px);

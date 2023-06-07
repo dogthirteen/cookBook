@@ -4,7 +4,7 @@
 			<block slot="content">翻牌选菜</block>
 		</cu-custom>
 		<view class="container flex flex-direction align-center justify-center">
-			<SelectModel :step.sync="step" @_type="handleCheck" />
+			<SelectModel :step.sync="step" :cookType="cookType" @_type="handleCheck" />
 			<mycard :step.sync="step" ref="mycard" :ready.sync="ready" :cardImg="cardBg" :card="cookList" @open="openCard">
 			</mycard>
 		</view>
@@ -15,12 +15,7 @@
 	import SelectModel from './components/SelectModel.vue'
 	import mycard from '../../components/hxr-card/hxr-card.vue';
 	import cook from '../../json/cook.json'
-	const imgs = [
-		'https://s2.loli.net/2023/06/06/JAb2gn93FTWpXY1.jpg',
-		'https://s2.loli.net/2023/06/06/zQexClDjtSiFmbZ.jpg',
-		'https://s2.loli.net/2023/06/06/AIfBxnrS3KsQ4vm.jpg',
-		'https://s2.loli.net/2023/06/06/zHdDmtnRXY9AGZM.jpg'
-	]
+	import cookType from '../../json/cookType.json'
 	export default {
 		components: {
 			mycard,
@@ -29,18 +24,28 @@
 		data() {
 			return {
 				step: 1,
+				imgs: [],
+				cookType: [],
 				cookList: [],
 				cardBg: 'https://s2.loli.net/2023/06/06/JAb2gn93FTWpXY1.jpg',
 				ready: false // 是否点击开始抽奖
 			};
 		},
+		onLoad() {
+			let photos = getApp().globalData.photos
+			let randoms = this.GenerateRandomNumbers(0, photos.length - 1, 4)
+			for (let i = 0; i < randoms.length; i++) {
+				this.imgs.push(photos[randoms[i]])
+			}
+			this.cookType = cookType.map((item, index) => ({ ...item, bgImg: this.imgs[index] }))
+		},
 		methods: {
 			// 选择类型
 			handleCheck(e) {
 				console.log(e);
-				this.cardBg = imgs[e - 1]
+				this.cardBg = this.imgs[e - 1]
 				let arr = cook.filter(item => item.type.includes(Number(e))).map(item => ({ ...item, status: 0 }))
-				let randoms = this.GenerateRandomNumbers(1, arr.length, 9)
+				let randoms = this.GenerateRandomNumbers(0, arr.length - 1, 9)
 				console.log(randoms);
 				for (let i = 0; i < randoms.length; i++) {
 					this.cookList.push(arr[randoms[i]])

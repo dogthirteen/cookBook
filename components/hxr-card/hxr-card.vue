@@ -54,10 +54,12 @@
 		methods: {
 			start(callback) {
 				this.isDiminish = true
-				this.$emit('update:ready', true)
 				setTimeout(() => {
 					this.isStart = true
 				}, 1600)
+				setTimeout(()=>{
+					this.$emit('update:ready', true)
+				},4500)
 				//      const {
 				//        card,
 				//        mode
@@ -204,11 +206,13 @@
 
 	.card .project .back {
 		font-size: 32rpx;
-		padding: 0 24rpx;
-		background: #efebe9;
-		border: 10rpx solid #B4A078;
+		padding: 0 34rpx;
+		text-align: center;
+		background: url('https://s2.loli.net/2023/06/07/sKU1evZFhJScpif.jpg') no-repeat;
+		background-size: 100% 100%;
+		/* border: 10rpx solid #B4A078;
 		outline: #B4A078 dashed 2rpx;
-		outline-offset: -20rpx;
+		outline-offset: -20rpx; */
 		transform: rotateY(180deg);
 	}
 

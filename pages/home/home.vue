@@ -18,7 +18,7 @@
 				<text :class="'cuIcon-' + item.cuIcon"></text>
 			</navigator>
 		</view>
-		<view class="cu-tabbar-height"></view>
+		<tabbar pageCur="home"></tabbar>
 	</view>
 
 </template>
@@ -27,6 +27,7 @@
 	export default {
 		data() {
 			return {
+				photos: [],
 				elements: [{
 						title: '随机菜品',
 						name: 'random',

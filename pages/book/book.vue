@@ -63,7 +63,7 @@
 				this.tabCur = e.currentTarget.dataset.index;
 				this.cookType = Number(e.currentTarget.dataset.type);
 				this.cookList = cook.filter(item => item.type.includes(this.cookType))
-				this.verticalNavTop = (e.currentTarget.dataset.id - 1) * 50					
+				this.verticalNavTop = (e.currentTarget.dataset.id - 1) * 50
 				this.mainTop = 1
 				this.$nextTick(function() {
 					this.mainTop = 0

@@ -23,10 +23,7 @@
 				<view :class="PageCur=='mine'?'text-black':'text-gray'">我的</view>
 			</view>
 		</view>
-		<image src="https://s2.loli.net/2023/06/06/JAb2gn93FTWpXY1.jpg" class="hide"></image>
-		<image src="https://s2.loli.net/2023/06/06/zQexClDjtSiFmbZ.jpg" class="hide"></image>
-		<image src="https://s2.loli.net/2023/06/06/AIfBxnrS3KsQ4vm.jpg" class="hide"></image>
-		<image src="https://s2.loli.net/2023/06/06/zHdDmtnRXY9AGZM.jpg" class="hide"></image>
+		<image v-for="(item,index) in photos" :key="index" :src="item" class="hide"></image>
 	</view>
 </template>
 
@@ -42,15 +39,24 @@
 		},
 		data() {
 			return {
-				PageCur: 'home'
+				PageCur: 'home',
+				photos: [],
 			}
 		},
 		onLoad() {
-			console.log('PageCur', this.PageCur);
+			uni.setNavigationBarColor({
+				frontColor: this.PageCur === 'mine' ? '#ffffff' : '#000000',
+				backgroundColor: '#ffffff'
+			})
+			this.photos = getApp().globalData.photos
 		},
 		methods: {
 			NavChange: function(e) {
 				this.PageCur = e.currentTarget.dataset.cur
+				uni.setNavigationBarColor({
+					frontColor: this.PageCur === 'mine' ? '#ffffff' : '#000000',
+					backgroundColor: '#ffffff'
+				})
 			}
 		}
 	}
