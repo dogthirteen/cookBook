@@ -5,19 +5,19 @@
 	export default {
 		globalData: {
 			photos: [
-				'https://s2.loli.net/2023/06/07/UbciBpItZW8Qdle.jpg',
-				'https://s2.loli.net/2023/06/07/46Ee1URXMiuzJjk.jpg',
-				'https://s2.loli.net/2023/06/07/hskZrIvJqeLp6ai.jpg',
-				'https://s2.loli.net/2023/06/07/yYQj7GqXDCrV4AS.jpg',
-				'https://s2.loli.net/2023/06/07/PHg95rnWxFMzV6O.jpg',
-				'https://s2.loli.net/2023/06/07/DSibxm1TrN6BULd.jpg',
-				'https://s2.loli.net/2023/06/07/RpgoDaO5vVJCWiN.jpg',
-				'https://s2.loli.net/2023/06/07/OFSz9IlerYmjnxX.jpg',
-				'https://s2.loli.net/2023/06/07/apm3e7rkAJDRKBw.jpg',
-				'https://s2.loli.net/2023/06/07/cz7gGEteahBu1FW.jpg',
-				'https://s2.loli.net/2023/06/07/4dk3Y6ypr1FBoSv.jpg',
-				'https://s2.loli.net/2023/06/07/ShrUy7dZx3kCATK.jpg',
-				'https://s2.loli.net/2023/06/07/7McTZG529FtOBid.jpg'
+				'https://i.imgtg.com/2023/06/28/OkZ77I.jpg',
+				'https://i.imgtg.com/2023/06/28/OkZhvM.jpg',
+				'https://i.imgtg.com/2023/06/28/OkZ1O1.jpg',
+				'https://i.imgtg.com/2023/06/28/OkZicG.jpg',
+				'https://i.imgtg.com/2023/06/28/OkZFTr.jpg',
+				'https://i.imgtg.com/2023/06/28/OkZNLD.jpg',
+				'https://i.imgtg.com/2023/06/28/OkZeuF.jpg',
+				'https://i.imgtg.com/2023/06/28/OkZAz6.jpg',
+				'https://i.imgtg.com/2023/06/28/OkZKPP.jpg',
+				'https://i.imgtg.com/2023/06/28/OkZZ9b.jpg',
+				'https://i.imgtg.com/2023/06/28/OkZyTl.jpg',
+				'https://i.imgtg.com/2023/06/28/OkZgvg.jpg',
+				'https://i.imgtg.com/2023/06/28/OkZmdB.jpg'
 			],
 		},
 		onLaunch: function() {

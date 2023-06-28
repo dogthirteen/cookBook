@@ -5,7 +5,7 @@
 		</cu-custom>
 		<swiper class="swiper">
 			<swiper-item class="swiper-item flex align-center justify-center">
-				<image src="https://s2.loli.net/2023/06/01/IGO56s4fBZ1zi9a.png" class="banner">
+				<image src="https://i.imgtg.com/2023/06/28/OkZkPq.png" class="banner">
 				</image>
 			</swiper-item>
 		</swiper>
@@ -18,7 +18,6 @@
 				<text :class="'cuIcon-' + item.cuIcon"></text>
 			</navigator>
 		</view>
-		<tabbar pageCur="home"></tabbar>
 	</view>
 
 </template>

@@ -349,14 +349,14 @@
 						box-shadow: 0 0 2px rgba($color: #fff, $alpha: 1);
 						border: solid 1px #9d82ea;
 						box-sizing: border-box;
+						border-radius: 20rpx;
+						// &:first-child {
+						// 	border-radius: 20rpx 0 0 20rpx;
+						// }
 
-						&:first-child {
-							border-radius: 20rpx 0 0 20rpx;
-						}
-
-						&:last-child {
-							border-radius: 0 20rpx 20rpx 0;
-						}
+						// &:last-child {
+						// 	border-radius: 0 20rpx 20rpx 0;
+						// }
 					}
 				}
 

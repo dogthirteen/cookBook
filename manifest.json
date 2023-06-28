@@ -94,13 +94,7 @@
             "urlCheck" : false,
             "es6" : true
         },
-        "usingComponents" : true,
-        "plugins" : {
-            "xk-user-info" : {
-                "version" : "1.0.0",
-                "provider" : "wxe30b4ad3738653e4"
-            }
-        }
+        "usingComponents" : true
     },
     "h5" : {
         "title" : "筷乐干饭"
